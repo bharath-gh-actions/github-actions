@@ -2,9 +2,14 @@ name: Concurrency # Name of your workflow
 
 on: [push] # The event that triggers the workflow
 
+concurrency:
+# this workflow should be triggered for any branch only once
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true # existing runs will be cancelled and latest will be triggered
+
 jobs: 
   hello: # The ID of the job
     runs-on: ubuntu-latest # The runner environment
     steps:
       - name: step1 # Name of the first step
-        run: echo "Hello World"
+        run: sleep 20
