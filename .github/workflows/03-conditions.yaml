@@ -1,0 +1,15 @@
+name: Conditions # Name of your workflow
+
+on: [push] # The event that triggers the workflow
+
+jobs: 
+  hello: # The ID of the job
+    runs-on: ubuntu-latest # The runner environment
+    steps:
+      - name: step1 # Name of the first step
+        if: github.ref == 'refs/heads/feature-**' # Condition to run this step only on the feature branch
+        run: echo "Hello World"
+
+      - name: step2 # Name of the second step
+        if: github.ref == 'refs/heads/main' # Condition to run this step only on the main branch
+        run: echo "Hello GitHub Actions"
