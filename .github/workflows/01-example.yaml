@@ -1,0 +1,13 @@
+name: Hello World # Name of your workflow
+
+on: [push] # The event that triggers the workflow
+
+jobs: 
+  hello: # The ID of the job
+    runs-on: ubuntu-latest # The runner environment
+    steps:
+      - name: step1 # Name of the first step
+        run: echo "Hello World"
+
+      - name: step2 # Name of the second step
+        run: echo "Hello GitHub Actions"
