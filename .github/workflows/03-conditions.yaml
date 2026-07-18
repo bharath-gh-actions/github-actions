@@ -13,3 +13,4 @@ jobs:
       - name: step2 # Name of the second step
         if: github.ref == 'refs/heads/main' # Condition to run this step only on the main branch
         run: echo "Hello GitHub Actions"
+        
