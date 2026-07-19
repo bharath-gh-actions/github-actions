@@ -4,7 +4,7 @@ on: [push] # The event that triggers the workflow
 
 jobs: 
   build: # The ID of the job
-    runs-on: ubuntu-latest # The runner environment
+    runs-on: self-hosted # The runner environment
     steps:
     # checkout will happen here and the code will be available for the next steps
       - name: checkout # Name of the first step
